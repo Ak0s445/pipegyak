@@ -1,5 +1,13 @@
 <p>aru works!</p>
 
 <div>
-    Ár : {{ar}}
+    Ár : {{ar | currency}}
+</div>
+
+<div>
+    {{(isAdmin ? 'Üdv Admin' : 'Üdv user') | uppercase}}
+</div>
+
+<div>
+    {{dateNow | date : 'YYYY-MM-dd. hh:mm'}}
 </div>
