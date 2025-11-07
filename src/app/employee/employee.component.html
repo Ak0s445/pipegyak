@@ -1,0 +1,41 @@
+<p>employee works!</p>
+
+<button (click)="toggleFilter()">Szűrők</button>
+
+<button (click)="showAlert()">Mutat</button>
+
+@if(showFilters){
+<div>
+    <input [formControl]="filteredName"
+    placeholder="Név" type="text">
+    
+    <input [formControl]="filteredCity"
+    placeholder="Település" type="text">
+</div>
+}
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Név</th>
+            <th>Település</th>
+            <th>Fizetés</th>
+        </tr>
+    </thead>
+
+<tbody>
+    @for(emp of filteredEmpList | empfilter:{name :filteredName.value, city: filteredCity.value}; track emp.id){
+        <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.city}}</td>
+        <td>{{emp.salary}}</td>
+        </tr>
+    }
+</tbody>
+
+</table>

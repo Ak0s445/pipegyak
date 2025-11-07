@@ -1,5 +1,6 @@
 import { CurrencyPipe, DatePipe, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { SalaryhufPipe } from '../shared/pipe/salaryhuf.pipe';
 
 @Component({
   selector: 'app-aru',
@@ -7,7 +8,8 @@ import { Component } from '@angular/core';
   imports: [
     CurrencyPipe, 
     UpperCasePipe,
-    DatePipe
+    DatePipe,
+    SalaryhufPipe
   ],
   templateUrl: './aru.component.html',
   styleUrl: './aru.component.css'
